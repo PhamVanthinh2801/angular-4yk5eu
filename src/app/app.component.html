@@ -1,0 +1,25 @@
+<ul *ngFor="let partner of list_value | keyvalue let i=index">
+
+	<li [class.active]="opened==i" *ngFor="let innerData of partner.value | keyvalue;let i=index" (click)="opened=opened==i?-1:i">
+
+		<a>
+			{{ innerData.key}}
+
+		</a>
+
+		<ul class="submenu">
+			<li *ngFor="let innerData1 of innerData.value | keyvalue">
+
+
+				{{innerData1.key}}
+
+
+
+			</li>
+
+
+
+		</ul>
+
+	</li>
+</ul>
